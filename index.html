@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minijuego Laberinto</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: black;
+        }
+        canvas {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="laberinto"></canvas>
+
+    <script>
+        const canvas = document.getElementById("laberinto");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = 400;
+        canvas.height = 400;
+
+        const paredes = [
+            {x: 0, y: 0, w: 400, h: 10},
+            {x: 0, y: 0, w: 10, h: 400},
+            {x: 390, y: 0, w: 10, h: 400},
+            {x: 0, y: 390, w: 400, h: 10},
+            {x: 50, y: 50, w: 300, h: 10},
+            {x: 50, y: 50, w: 10, h: 250},
+            {x: 50, y: 300, w: 200, h: 10},
+            {x: 250, y: 150, w: 10, h: 160},
+            {x: 150, y: 100, w: 10, h: 200},
+            {x: 100, y: 200, w: 200, h: 10},
+        ];
+
+        const meta = {x: 360, y: 360, r: 10};
+        let jugador = {x: 20, y: 20, r: 5};
+        let jugando = false;
+
+        function dibujarLaberinto() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = "black";
+            paredes.forEach(p => ctx.fillRect(p.x, p.y, p.w, p.h));
+            
+            ctx.fillStyle = "green";
+            ctx.beginPath();
+            ctx.arc(meta.x, meta.y, meta.r, 0, Math.PI * 2);
+            ctx.fill();
+            
+            ctx.fillStyle = "blue";
+            ctx.beginPath();
+            ctx.arc(jugador.x, jugador.y, jugador.r, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function detectarColision() {
+            for (let p of paredes) {
+                if (
+                    jugador.x + jugador.r > p.x &&
+                    jugador.x - jugador.r < p.x + p.w &&
+                    jugador.y + jugador.r > p.y &&
+                    jugador.y - jugador.r < p.y + p.h
+                ) {
+                    reiniciarJuego();
+                }
+            }
+        }
+
+        function verificarMeta() {
+            const dx = jugador.x - meta.x;
+            const dy = jugador.y - meta.y;
+            if (Math.sqrt(dx * dx + dy * dy) < jugador.r + meta.r) {
+                alert("¡Ganaste! Redirigiendo al portfolio...");
+                window.location.href = "Main.html#portfolio";
+            }
+        }
+
+        function reiniciarJuego() {
+            jugando = false;
+            jugador.x = 20;
+            jugador.y = 20;
+            dibujarLaberinto();
+        }
+
+        function moverJugador(event) {
+            if (!jugando) return;
+            const rect = canvas.getBoundingClientRect();
+            jugador.x = event.clientX - rect.left;
+            jugador.y = event.clientY - rect.top;
+            detectarColision();
+            verificarMeta();
+            dibujarLaberinto();
+        }
+
+        canvas.addEventListener("mousedown", () => jugando = true);
+        canvas.addEventListener("mouseup", reiniciarJuego);
+        canvas.addEventListener("mousemove", moverJugador);
+        canvas.addEventListener("touchstart", () => jugando = true);
+        canvas.addEventListener("touchend", reiniciarJuego);
+        canvas.addEventListener("touchmove", (event) => {
+            const touch = event.touches[0];
+            moverJugador(touch);
+        });
+
+        dibujarLaberinto();
+    </script>
+</body>
+</html>

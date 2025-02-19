@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <canvas id="spaceCanvas"></canvas>
+    <header>
+        <nav>
+            <button class="menu-toggle">&#9776;</button>
+            <ul class="nav-links">
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#tecnologias">Tecnologías</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <h1 class="nav-title"><a class="URLs" href="?"> Alejandro Banegas</a></h1>
+        </nav>
+    </header>
+    <main>
+        <section id="portfolio">
+            <h1>Alejandro Banegas</h1>
+            <p>Desarrollador Web, Tecnico en producción de videojuegos, Desarrollador de Aplicacioónes.</p>
+            <div class="proyectos">
+                <div class="proyecto">
+                    <h2 class="TituloImagen"><a class="URLs" href="https://senshuro.itch.io/infecteduniversity">Infected University</a></h2>
+                    <div class="carrusel">
+                        <img src="https://img.itch.zone/aW1hZ2UvMzI2NjYwNC8xOTU2MDMyNy5wbmc=/original/X9%2BarQ.png" alt="Imagen 1">
+                        <img src="https://img.itch.zone/aW1hZ2UvMzI2NjYwNC8xOTU2MDMyOC5wbmc=/794x1000/77ImLe.png" alt="Imagen 2">
+                        <img src="https://img.itch.zone/aW1hZ2UvMzI2NjYwNC8xOTU2MDMyNi5wbmc=/794x1000/p9u2t0.png" alt="Imagen 3">
+                        <img src="https://img.itch.zone/aW1hZ2UvMzI2NjYwNC8xOTU2MDMyNS5wbmc=/794x1000/fh7lvG.png" alt="Imagen 4">
+                        
+                    </div>
+                    <div class="descripcion-proyecto">
+                        <p>Infected University es un survival horror en 2D donde debes sobrevivir en un campus universitario invadido por zombis. Explora, encuentra recursos y escapa con vida.</p>
+                    </div>
+                </div>
+                <div class="proyecto">
+                    <h2 class="TituloImagen"><a class="URLs" href="https://senshuro.itch.io/bubble-clicker">Bubble Clicker</a></h2>
+                    <div class="carrusel">
+                        <img src="https://img.itch.zone/aW1hZ2UvMzI3ODE2MC8xOTU2MjE0Mi5wbmc=/794x1000/4vCYRv.png" alt="Imagen 1">
+                        <img src="https://img.itch.zone/aW1hZ2UvMzI3ODE2MC8xOTU2MjE0My5wbmc=/794x1000/5XRx8i.png" alt="Imagen 2">
+                        <img src="https://img.itch.zone/aW1hZ2UvMzI3ODE2MC8xOTU2MjEzOS5wbmc=/794x1000/bUcTAu.png" alt="imagen 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="tecnologias">
+            <h1>Tecnologías</h1>
+            <ul class="tecnologias-list">
+                <li data-tec="HTML">HTML</li>
+                <li data-tec="CSS">CSS</li>
+                <li data-tec="JavaScript">JavaScript</li>
+                <li data-tec="Unity">Unity</li>
+                <li data-tec="Godot">Godot</li>
+                <li data-tec="GoogleTools">GoogleTools</li>
+                <li data-tec="Paquete de Offices">Paquete de Offices</li>
+            </ul>
+                       
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <span class="close">&times;</span>
+                    <h2 id="popup-title"></h2>                        
+                    <p id="popup-text"></p>
+                </div>
+            </div>
+            
+        </section>
+        <section id="contacto">
+            <h1>Contacto</h1>
+            <p>Email: <a class="URLs" href="alejandro.jorge.banegas@gmail.com">alejandro.jorge.banegas@gmail.com</a></p>
+        </section>
+    </main>
+</body>
+</html>
+<!-- Popup -->
