@@ -90,25 +90,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-    document.addEventListener("DOMContentLoaded", function () {
-        const contactLink = document.getElementById("contact-link");
-    
-        if (contactLink) {
-            contactLink.addEventListener("click", function (event) {
-                event.preventDefault(); // Evita la navegación por defecto
-    
-                const email = "alejandro.jorge.banegas@gmail.com";
-                const subject = "Asunto";
-                const body = "Hola, Alejandro.";
-    
-                if (/Mobi|Android/i.test(navigator.userAgent)) {
-                    // Dispositivo móvil: abrir app de correo
-                    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                } else {
-                    // PC: abrir Gmail en una nueva pestaña
-                    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, "_blank");
-                }
-            });
-        }
-    });
+
 
