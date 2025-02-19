@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Unity": "Motor de videojuegos popular para 2D y 3D. Me capacite en la Universidad Nacional de José Clemente Paz y de forma autodidacta para mejorar mis habilidades",
         "Godot": "Motor de videojuegos open-source para desarrollo 2D y 3D. Me capacite de manera Autodidacta, siguiendo tutoriales. Hoy es unas de mis tecnologias preferidas",
         "GoogleTools": "Herramientas de Google como Drive, Docs, Sites entre otras. Realice la pagina web de la empresa MCMasterClean con estas tecnologias, hoy en dia sigue activa",
-        "Paquete de Offices": "Suite de herramientas como Word, Excel y PowerPoint."
+        "Paquete de Offices": "Suite de herramientas como Word, Excel y PowerPoint. Realicé un curso completo en 2012 de office (data entry) en el instituto de formación laboral 201. En 2022 hice un curso de Microsoft Basic por Udemy para el desarrollo de apps con Microsoft."
     };
 
     const popup = document.getElementById("popup");
