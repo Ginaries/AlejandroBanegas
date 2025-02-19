@@ -90,18 +90,25 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-document.getElementById("contacto-link").addEventListener("click", function(event) {
-        event.preventDefault(); // Evita que el enlace funcione por defecto
-
-        var email = "alejandro.jorge.banegas@gmail.com";
-        var subject = "Asunto";
-        var body = "Hola, Alejandro.";
-
-        if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-            // Si es un dispositivo móvil, abrir la app de correo predeterminada
-            window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-        } else {
-            // Si es PC, abrir Gmail en el navegador
-            window.open("https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(email) + "&su=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body), "_blank");
+    document.addEventListener("DOMContentLoaded", function () {
+        const contactLink = document.getElementById("contact-link");
+    
+        if (contactLink) {
+            contactLink.addEventListener("click", function (event) {
+                event.preventDefault(); // Evita la navegación por defecto
+    
+                const email = "alejandro.jorge.banegas@gmail.com";
+                const subject = "Asunto";
+                const body = "Hola, Alejandro.";
+    
+                if (/Mobi|Android/i.test(navigator.userAgent)) {
+                    // Dispositivo móvil: abrir app de correo
+                    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                } else {
+                    // PC: abrir Gmail en una nueva pestaña
+                    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, "_blank");
+                }
+            });
         }
     });
+
