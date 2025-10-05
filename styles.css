@@ -221,3 +221,110 @@ main {
     color: red;
 }
 /*------------------------------*/
+/* Curriculum personalizado */
+.cv-main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 60px 0 40px 0;
+}
+
+.cv-card {
+    background: rgba(30,30,30,0.90);
+    border-radius: 18px;
+    box-shadow: 0 0 24px #111a;
+    padding: 40px 50px 40px 40px;
+    display: flex;
+    gap: 50px;
+    max-width: 1200px;
+    width: 95vw;
+    align-items: flex-start;
+}
+
+.cv-foto {
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.cv-foto img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #0de4b9;
+    object-fit: cover;
+    box-shadow: 0 0 20px #222;
+}
+
+.cv-basico {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.cv-basico h1 {
+    color: #0de4b9;
+    font-size: 2.3rem;
+    margin-bottom: 0;
+}
+
+.cv-label {
+    color: #7ecfff;
+    font-weight: 600;
+}
+
+.cv-basico a {
+    color: #0de4b9;
+    text-decoration: none;
+}
+
+.cv-info {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.cv-info section {
+    margin-bottom: 0;
+}
+
+.cv-info h2 {
+    color: #7ecfff;
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+}
+
+.cv-info ul {
+    margin-left: 18px;
+    margin-bottom: 0;
+}
+
+.cv-info li {
+    margin-bottom: 7px;
+}
+
+.cv-info strong {
+    color: #ffe082;
+}
+
+@media (max-width: 900px) {
+    .cv-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 10px;
+        gap: 30px;
+    }
+    .cv-info {
+        width: 100%;
+    }
+    .cv-foto {
+        min-width: 0;
+    }
+}
